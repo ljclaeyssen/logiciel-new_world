@@ -4,6 +4,6 @@ export const routes: Routes = [
   {
     path: 'repeatable',
     loadChildren: () =>
-      import('./repeatable-content/repeatable-content.routes').then(m => m.repeatableContentRoutes)
+      import('./pages/repeatable-content/repeatable-content.routes').then(m => m.repeatableContentRoutes)
   }
 ];

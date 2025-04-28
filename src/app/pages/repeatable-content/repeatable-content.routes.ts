@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import {dailyContentRoutes} from './daily-content/daily-content.routes';
 
 export const repeatableContentRoutes: Routes = [
   {

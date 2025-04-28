@@ -1,0 +1,41 @@
+<p-accordion [value]="openPanels()" [multiple]="true">
+  @for (ecr of eliteChestRuns(); track ecr.id) {
+    <p-accordion-panel [value]="ecr.id">
+      <p-accordion-header>
+        <div class="flex items-center justify-between w-full">
+          <span class="text-lg font-semibold">{{ ecr.name }}</span>
+          <div class="flex items-center space-x-3">
+            <button
+              pButton
+              type="button"
+              pButtonIcon="pi pi-copy"
+              class="p-button-sm p-button-text p-button-secondary"
+              pTooltip="Copier le shortname"
+              tooltipPosition="top"
+              (click)="copyToClipboard(ecr.shortname)"
+            >
+              {{ ecr.shortname }}
+            </button>
+            @if (!(completions()[ecr.id] | hasReset: ecr.refresh)) {
+              <span class="font-mono text-yellow-300">
+                {{ completions()[ecr.id] | timeRemaining: ecr.refresh }}
+              </span>
+            } @else {
+              <i
+                class="pi pi-check-circle text-green-400 cursor-pointer"
+                pTooltip="Marquer comme terminé"
+                tooltipPosition="top"
+                (click)="completeRun(ecr.id)"
+              ></i>
+            }
+          </div>
+        </div>
+      </p-accordion-header>
+      <p-accordion-content>
+        <div class="p-4">
+          toto
+        </div>
+      </p-accordion-content>
+    </p-accordion-panel>
+  }
+</p-accordion>

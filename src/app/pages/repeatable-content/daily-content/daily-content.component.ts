@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {DailiesStore} from '../../../stores/dailies-store';
 
 @Component({
   selector: 'app-daily-content',
@@ -7,7 +8,8 @@ import {RouterOutlet} from '@angular/router';
     RouterOutlet
   ],
   templateUrl: './daily-content.component.html',
-  styleUrl: './daily-content.component.css'
+  styleUrl: './daily-content.component.css',
+  providers: [DailiesStore],
 })
 export class DailyContentComponent {
 
