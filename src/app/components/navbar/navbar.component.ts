@@ -1,7 +1,6 @@
 import {Component, signal} from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {Menubar} from 'primeng/menubar';
-import {Ripple} from 'primeng/ripple';
 
 @Component({
   selector: 'app-navbar',
@@ -17,16 +16,17 @@ export class NavbarComponent {
       {
         label: 'Répétable',
         icon: 'pi pi-replay',
-        items: [
-          {
-            label: 'Journalier',
-            icon: 'pi pi-calendar-clock'
-          },
-          {
-            label: 'Hebdomadaire',
-            icon: 'pi pi-calendar'
-          },
-        ]
+        routerLink: 'repeatable',
+        // items: [
+        //   {
+        //     label: 'Journalier',
+        //     icon: 'pi pi-calendar-clock'
+        //   },
+        //   {
+        //     label: 'Hebdomadaire',
+        //     icon: 'pi pi-calendar'
+        //   },
+        // ]
       },
       {
         label: 'A faire',
