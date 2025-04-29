@@ -24,13 +24,13 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href "https://ljclaeyssen.github.io/longiciel-new_world/"
 
+      - name: Create .nojekyll file
+        run: touch dist/longiciel-new-world/.nojekyll
+
       - name: Move browser files to root
         run: |
           mv dist/longiciel-new-world/browser/* dist/longiciel-new-world/
           rm -rf dist/longiciel-new-world/browser
-
-      - name: Create .nojekyll file
-        run: touch dist/longiciel-new-world/.nojekyll
 
       - name: Setup Git
         run: |
