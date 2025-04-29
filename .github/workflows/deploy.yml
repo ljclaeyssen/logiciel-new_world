@@ -24,7 +24,6 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href "https://ljclaeyssen.github.io/longiciel-new_world/"
 
-      # Nettoyer le dossier dist/longiciel-new-world avant de déplacer les fichiers
       - name: Clean dist folder
         run: |
           rm -rf dist/longiciel-new-world/*
