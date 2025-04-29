@@ -30,4 +30,6 @@ jobs:
           rm -rf dist/longiciel-new-world/browser
 
       - name: Run CLI things
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx angular-cli-ghpages --dir=dist/longiciel-new-world
