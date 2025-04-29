@@ -26,11 +26,5 @@ jobs:
           mv dist/longiciel-new-world/browser/* dist/longiciel-new-world/
           rm -rf dist/longiciel-new-world/browser
 
-      - name: Create .nojekyll file
-        run: touch dist/longiciel-new-world/.nojekyll
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist/longiciel-new-world
+      - name: Run CLI things
+        run: npx angular-cli-ghpages --dir=dist/longiciel-new-world
