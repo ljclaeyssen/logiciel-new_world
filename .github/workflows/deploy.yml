@@ -24,26 +24,19 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --base-href "https://ljclaeyssen.github.io/longiciel-new_world/"
 
-      - name: Move browser files to root
+      # Nettoyer le dossier dist/longiciel-new-world avant de déplacer les fichiers
+      - name: Clean dist folder
         run: |
+          rm -rf dist/longiciel-new-world/*
           mv dist/longiciel-new-world/browser/* dist/longiciel-new-world/
           rm -rf dist/longiciel-new-world/browser
 
       - name: Create .nojekyll file
-        run: touch .nojekyll
+        run: touch dist/longiciel-new-world/.nojekyll
 
-      - name: Setup Git
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-
-      - name: Deploy to gh-pages branch
-        run: |
-          git checkout --orphan gh-pages
-          git rm -rf .
-          mv dist/longiciel-new-world/* .
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push --force origin gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/longiciel-new-world
+          publish_branch: gh-pages
