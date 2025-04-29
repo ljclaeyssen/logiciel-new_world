@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build -- --configuration production --base-href "https://ljclaeyssen.github.io/longiciel-new_world/"
+
+      - name: Move browser files to root
+        run: |
+          mv dist/longiciel-new-world/browser/* dist/longiciel-new-world/
+          rm -rf dist/longiciel-new-world/browser
+
+      - name: Create .nojekyll file
+        run: touch dist/longiciel-new-world/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/longiciel-new-world
