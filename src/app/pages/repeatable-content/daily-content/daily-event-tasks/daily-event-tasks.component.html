@@ -1,0 +1,35 @@
+<h2>Événements Temporaires</h2>
+<p-accordion [value]="openPanels()" [multiple]="true">
+  @for (task of eventTasks(); track task.id) {
+    <p-accordion-panel [value]="task.id">
+      <p-accordion-header>
+        <div class="accordion-header">
+          <div>{{ task.name }}</div>
+        </div>
+      </p-accordion-header>
+      <p-accordion-content>
+        <div class="p-4">
+          <div class="occurrences-container">
+            @for (item of task.items; track $index; let idx = $index) {
+              <div class="occurrence-item">
+                <p-button
+                  [label]="item.name + ' (' + item.amount + ')'"
+                  icon="pi pi-check"
+                  iconPos="right"
+                  size="small"
+                  [disabled]="!(completions()[task.id + '-' + idx] | hasReset: task.refresh)"
+                  (click)="completeItem(task.id + '-' + idx)"
+                />
+                @if (!(completions()[task.id + '-' + idx] | hasReset: task.refresh)) {
+                  <span class="remaining-time">
+                      {{ completions()[task.id + '-' + idx] | timeRemaining: task.refresh }}
+                    </span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </p-accordion-content>
+    </p-accordion-panel>
+  }
+</p-accordion>

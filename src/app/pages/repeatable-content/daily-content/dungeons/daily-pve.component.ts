@@ -5,6 +5,7 @@ import {Button} from 'primeng/button';
 import {CustomOccurrenceLabelPipe} from '../../../../pipes/custom-occurence-label.pipe';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
+import {OpenPanelsService} from '../../../../services/open-panels.service';
 import {ResetTimeService} from '../../../../services/reset-time.service';
 import { DailiesStore } from '../../../../stores/dailies-store';
 
@@ -27,12 +28,13 @@ import { DailiesStore } from '../../../../stores/dailies-store';
 export class DailyPVEComponent {
   private readonly dailiesStore = inject(DailiesStore);
   private readonly resetTimeService = inject(ResetTimeService);
+  private readonly openPanelsService = inject(OpenPanelsService);
 
   public readonly completions = this.dailiesStore.completedTasks;
 
   public readonly dailyActivities = computed(() => {
     return this.dailiesStore.otherTasks().filter(activity =>
-      ['Donjons aléatoires', 'Donjons mutés', 'Quêtes de faction'].includes(activity.name)
+      ['Donjons aléatoires', 'Donjons mutés', 'Quêtes de faction', 'Tuer 3 nommés'].includes(activity.name)
     );
   });
 
@@ -45,11 +47,9 @@ export class DailyPVEComponent {
           const taskId = `${activity.id}-${i}`;
           const lastCompletedDate = completed[taskId];
           if (!lastCompletedDate || !this.resetTimeService.isBeforeReset(lastCompletedDate, activity.refresh)) {
-            console.log(`Activity ${activity.id}: Occurrence ${i} is available, opening panel`);
             return true;
           }
         }
-        console.log(`Activity ${activity.id}: All occurrences are completed and locked, closing panel`);
         return false;
       })
       .map(activity => activity.id);
@@ -61,16 +61,13 @@ export class DailyPVEComponent {
     for (let i = 1; i <= totalOccurrences; i++) {
       const taskId = `${activityId}-${i}`;
       const lastCompletedDate = completed[taskId];
-      console.log(`Counting for ${taskId}: lastCompletedDate=${lastCompletedDate}`);
       if (lastCompletedDate) {
         const isBeforeReset = this.resetTimeService.isBeforeReset(lastCompletedDate, this.dailyActivities().find(activity => activity.id === activityId)!.refresh);
-        console.log(`  isBeforeReset=${isBeforeReset}`);
         if (isBeforeReset) {
           count++;
         }
       }
     }
-    console.log(`Activity ${activityId}: Completed occurrences=${count}/${totalOccurrences}`);
     return count;
   }
 

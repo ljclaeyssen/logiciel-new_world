@@ -13,8 +13,10 @@ export class CustomOccurrenceLabelPipe implements PipeTransform {
         return `Mutation ${occurrence}`;
       case 'Quêtes de faction':
         return `Quête ${occurrence}`;
+      case 'Tuer 3 nommés':
+        return `Nommé ${occurrence}`;
       default:
-        return `Occurrence ${occurrence}`; // Fallback au cas où une nouvelle activité est ajoutée
+        return `Occurrence ${occurrence}`;
     }
   }
 

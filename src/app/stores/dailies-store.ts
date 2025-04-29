@@ -1,11 +1,27 @@
 import {computed, inject} from '@angular/core';
 import {patchState, signalStore, withComputed, withHooks, withMethods, withState} from '@ngrx/signals';
-import dayliesData from '../data/daylies.json';
-import {Activity} from '../models/activity';
-import {EliteChestRun} from '../models/elite-chest-run';
+import eventTasksData from '../data/daily-event-tasks.json';
+import dailyTasksData from '../data/daily-tasks.json';
+
+
+import ecrTasksData from '../data/ecr-tasks.json';
 import {RefreshFrequency} from '../models/refresh-frequency';
-import {Task} from '../models/task';
+import {Activity} from '../models/tasks/activity';
+import {EliteChestRun} from '../models/tasks/elite-chest-run';
+import {EventTask} from '../models/tasks/event-task';
+import {PurchasableTask} from '../models/tasks/purchasable-task';
+import {Task} from '../models/tasks/task';
 import {LocalStorageService} from '../services/local-storage.service';
+
+const ecrTasks: EliteChestRun[] = (ecrTasksData as unknown) as EliteChestRun[];
+const eventTasks: EventTask[] = (eventTasksData as unknown) as EventTask[];
+const dailyTasks: Task[] = (dailyTasksData as unknown) as Task[];
+
+const allTasks: Task[] = [
+  ...ecrTasks,
+  ...eventTasks,
+  ...dailyTasks
+] as Task[];
 
 export interface DailiesCompletion {
   [taskId: string]: string; // taskId -> ISO date string
@@ -17,9 +33,9 @@ interface DailiesState {
 }
 
 const initialState: DailiesState = {
-  dailies: dayliesData.map(task => ({
+  dailies: allTasks.map(task => ({
     ...task,
-    refresh: task.refresh === 'DAILY' ? RefreshFrequency.DAILY : RefreshFrequency.WEEKLY,
+    refresh: RefreshFrequency.DAILY,
   })),
   completions: {},
 };
@@ -36,6 +52,16 @@ export const DailiesStore = signalStore(
     otherTasks: computed(() =>
       (store.dailies() as Task[]).filter(
         (task): task is Activity => !('shortname' in task)
+      )
+    ),
+    purchasableTasks: computed(() =>
+      (store.dailies() as Task[]).filter(
+        (task): task is PurchasableTask => 'items' in task && !('eventEndDate' in task)
+      )
+    ),
+    eventTasks: computed(() =>
+      (store.dailies() as Task[]).filter(
+        (task): task is EventTask => 'items' in task && 'eventEndDate' in task
       )
     ),
     completedTasks: computed(() => store.completions()),

@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 import {DailyPVEComponent} from './dungeons/daily-pve.component';
 import {EliteChestRunComponent} from './elite-chest-run/elite-chest-run.component';
+import {DailyPurchasablesComponent} from './purchasables/daily-purchasables.component';
 
 export const dailyContentRoutes: Routes = [
     {
@@ -15,6 +16,10 @@ export const dailyContentRoutes: Routes = [
         {
           path: 'activities',
           component: DailyPVEComponent,
+        },
+        {
+          path: 'purchasables',
+          component: DailyPurchasablesComponent,
         }
       ]
     },

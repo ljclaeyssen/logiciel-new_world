@@ -20,18 +20,23 @@ export class RepeatableContentComponent {
       items: [
         {
           label: 'Elite Chest Run',
-          icon: 'pi pi-sign-out',
+          icon: 'ra ra-boot-stomp',
           routerLink: 'daily/ecr',
         },
         {
           label: 'PVE',
-          icon: 'pi pi-angle-down',
+          icon: 'ra ra-sword',
           routerLink: 'daily/activities',
+        },
+        {
+          label: 'Achats',
+          icon: 'ra ra-crown',
+          routerLink: 'daily/purchasables',
         }
       ]
     },
     {
-      label: 'Hebdomadaire',
+      label: 'Hebdomadaire (soon)',
       icon: 'pi pi-calendar',
       routerLink: 'weekly',
     },

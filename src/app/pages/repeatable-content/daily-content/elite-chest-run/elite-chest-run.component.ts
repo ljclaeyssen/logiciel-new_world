@@ -1,12 +1,10 @@
 import {Component, computed, inject} from '@angular/core';
-import {Accordion, AccordionContent, AccordionHeader, AccordionPanel, AccordionTab} from 'primeng/accordion';
+import {Accordion, AccordionContent, AccordionHeader, AccordionPanel} from 'primeng/accordion';
 import {MessageService} from 'primeng/api';
-import {Button, ButtonDirective, ButtonIcon} from 'primeng/button';
-import {Toast} from 'primeng/toast';
-import {EliteChestRun} from '../../../../models/elite-chest-run';
+import {Button} from 'primeng/button';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
-import {ResetTimeService} from '../../../../services/reset-time.service';
+import {OpenPanelsService} from '../../../../services/open-panels.service';
 import {DailiesStore} from '../../../../stores/dailies-store';
 
 @Component({
@@ -25,23 +23,17 @@ import {DailiesStore} from '../../../../stores/dailies-store';
 })
 export class EliteChestRunComponent {
   private readonly dailiesStore = inject(DailiesStore);
-  private readonly resetTimeService = inject(ResetTimeService);
   private readonly messageService =  inject(MessageService);
+  private readonly openPanelsService = inject(OpenPanelsService);
 
   public readonly completions = this.dailiesStore.completedTasks;
 
   public readonly eliteChestRuns = computed(() => this.dailiesStore.ecrTasks());
 
-  public readonly openPanels = computed(() => {
-    const runs = this.eliteChestRuns();
-    const completed = this.completions();
-    return runs
-      .filter(run => {
-        const lastCompletedDate = completed[run.id];
-        return !lastCompletedDate || !this.resetTimeService.isBeforeReset(lastCompletedDate, run.refresh);
-      })
-      .map(run => run.id);
-  });
+  public readonly openPanels = this.openPanelsService.calculateOpenPanelsComputed(
+    this.eliteChestRuns,
+    this.completions
+  );
 
   copyToClipboard(shortname: string) {
     navigator.clipboard.writeText(`+ ${shortname}`).then(() => {

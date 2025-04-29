@@ -1,5 +1,5 @@
-import {Loot} from './loot';
-import {RefreshFrequency} from './refresh-frequency';
+import {Loot} from '../loot';
+import {RefreshFrequency} from '../refresh-frequency';
 
 export interface Task {
   id: string;

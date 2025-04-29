@@ -196,29 +196,5 @@
     "globalLocalisationMapURI": "/maps/global/mahantaram-court.png",
     "regionalLocalisationMapURI": "/maps/regional/mahantaram-court-detail.png",
     "fastTravelPointName": "Mahantaram Court Gate"
-  },
-  {
-    "id": "dng-rand",
-    "name": "Donjons aléatoires",
-    "description": "Compléter 3 donjons aléatoires via l'interface de groupe.",
-    "refresh": "DAILY",
-    "loot": [],
-    "amount": 3
-  },
-  {
-    "id": "dng-mut",
-    "name": "Donjons mutés",
-    "description": "Compléter 2 donjons mutés aléatoires via l'interface de groupe.",
-    "refresh": "DAILY",
-    "loot": [],
-    "amount": 2
-  },
-  {
-    "id": "quest-faction",
-    "name": "Quêtes de faction",
-    "description": "Compléter 3 quêtes de faction via le tableau des missions.",
-    "refresh": "DAILY",
-    "loot": [],
-    "amount": 3
   }
 ]
