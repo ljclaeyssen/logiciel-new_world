@@ -29,7 +29,21 @@ jobs:
           mv dist/longiciel-new-world/browser/* dist/longiciel-new-world/
           rm -rf dist/longiciel-new-world/browser
 
-      - name: Run CLI things
+      - name: Create .nojekyll file
+        run: touch dist/longiciel-new-world/.nojekyll
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Deploy to gh-pages branch
+        run: |
+          git checkout --orphan gh-pages
+          git rm -rf .
+          mv dist/longiciel-new-world/* .
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push --force origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx angular-cli-ghpages --dir=dist/longiciel-new-world
