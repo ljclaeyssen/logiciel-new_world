@@ -1,6 +1,8 @@
 import {Component, computed, inject} from '@angular/core';
 import {Accordion, AccordionContent, AccordionHeader, AccordionPanel, AccordionTab} from 'primeng/accordion';
-import {ButtonDirective, ButtonIcon} from 'primeng/button';
+import {MessageService} from 'primeng/api';
+import {Button, ButtonDirective, ButtonIcon} from 'primeng/button';
+import {Toast} from 'primeng/toast';
 import {EliteChestRun} from '../../../../models/elite-chest-run';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
@@ -13,11 +15,10 @@ import {DailiesStore} from '../../../../stores/dailies-store';
     AccordionPanel,
     Accordion,
     AccordionHeader,
-    ButtonDirective,
-    ButtonIcon,
     HasResetPipe,
     TimeRemainingPipe,
-    AccordionContent
+    AccordionContent,
+    Button
   ],
   templateUrl: './elite-chest-run.component.html',
   styleUrl: './elite-chest-run.component.css'
@@ -25,6 +26,7 @@ import {DailiesStore} from '../../../../stores/dailies-store';
 export class EliteChestRunComponent {
   private readonly dailiesStore = inject(DailiesStore);
   private readonly resetTimeService = inject(ResetTimeService);
+  private readonly messageService =  inject(MessageService);
 
   public readonly completions = this.dailiesStore.completedTasks;
 
@@ -42,8 +44,8 @@ export class EliteChestRunComponent {
   });
 
   copyToClipboard(shortname: string) {
-    navigator.clipboard.writeText(shortname).then(() => {
-      console.log(`Shortname ${shortname} copié dans le presse-papiers !`);
+    navigator.clipboard.writeText(`+ ${shortname}`).then(() => {
+      this.messageService.add({ severity: 'info', summary: `+ ${shortname}`, detail: `"+ ${shortname}" a été copié dans votre presse-papier ! `, life: 3000 });
     });
   }
 

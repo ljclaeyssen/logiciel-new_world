@@ -11,25 +11,25 @@ export class ResetTimeService {
   private readonly RESET_MINUTE: number = 0; // 00 minutes
   private readonly TIMEZONE: string = 'utc';
 
-  private calculateNextResetTime(frequency: RefreshFrequency): DateTime {
-    const now = DateTime.now().setZone(this.TIMEZONE);
+  private calculateNextResetTime(frequency: RefreshFrequency, referenceDate: DateTime): DateTime {
+    const refDate = referenceDate.setZone(this.TIMEZONE);
 
     if (frequency === RefreshFrequency.DAILY) {
-      let resetTime = now
+      let resetTime = refDate
         .startOf('day')
         .set({ hour: this.RESET_HOUR_UTC, minute: this.RESET_MINUTE });
 
-      if (now > resetTime) {
+      if (refDate >= resetTime) {
         resetTime = resetTime.plus({ days: 1 });
       }
       return resetTime;
     } else if (frequency === RefreshFrequency.WEEKLY) {
-      let resetTime = now
+      let resetTime = refDate
         .startOf('week')
         .plus({ days: 1 })
         .set({ hour: this.RESET_HOUR_UTC, minute: this.RESET_MINUTE });
 
-      if (now > resetTime) {
+      if (refDate >= resetTime) {
         resetTime = resetTime.plus({ weeks: 1 });
       }
       return resetTime;
@@ -38,8 +38,8 @@ export class ResetTimeService {
     throw new Error('Unsupported refresh frequency');
   }
 
-  getNextResetTime(frequency: RefreshFrequency): DateTime {
-    return this.calculateNextResetTime(frequency);
+  getNextResetTime(frequency: RefreshFrequency, referenceDate: DateTime = DateTime.now()): DateTime {
+    return this.calculateNextResetTime(frequency, referenceDate);
   }
 
   isBeforeReset(date: string | DateTime, frequency: RefreshFrequency): boolean {
@@ -47,13 +47,16 @@ export class ResetTimeService {
       typeof date === 'string'
         ? DateTime.fromISO(date, { zone: this.TIMEZONE })
         : date;
-    const nextResetTime = this.calculateNextResetTime(frequency);
-    return compareDate < nextResetTime;
+    const now = DateTime.now().setZone(this.TIMEZONE);
+
+    const nextResetAfterCompareDate = this.calculateNextResetTime(frequency, compareDate);
+
+    return nextResetAfterCompareDate > now;
   }
 
   hasResetOccurred(frequency: RefreshFrequency): boolean {
     const now = DateTime.now().setZone(this.TIMEZONE);
-    const nextResetTime = this.calculateNextResetTime(frequency);
+    const nextResetTime = this.calculateNextResetTime(frequency, now);
     return now > nextResetTime;
   }
 

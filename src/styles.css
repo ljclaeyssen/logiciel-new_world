@@ -4,3 +4,9 @@
 body {
   font-family: "IM Fell DW Pica", serif;
 }
+
+
+.remaining-time {
+  color: #34d399;
+  font-size: 0.875rem;
+}

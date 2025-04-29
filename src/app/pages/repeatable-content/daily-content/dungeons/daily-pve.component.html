@@ -1,0 +1,37 @@
+<p-accordion [value]="openPanels()" [multiple]="true">
+  @for (activity of dailyActivities(); track activity.id) {
+    <p-accordion-panel [value]="activity.id">
+      <p-accordion-header>
+        <div class="accordion-header">
+          <div>{{ activity.name }}</div>
+          <div [ngClass]="{'completed': countCompletedOccurrences(activity.id, activity.amount) === activity.amount}">
+              {{ countCompletedOccurrences(activity.id, activity.amount) }}/{{ activity.amount }}
+            </div>
+        </div>
+      </p-accordion-header>
+      <p-accordion-content>
+        <div class="p-4">
+          <div class="occurrences-container">
+            @for (i of Array(activity.amount).keys(); track i; let idx = $index) {
+              <div class="occurrence-item">
+                <p-button
+                  [label]="activity.name | customOccurrenceLabel:(idx + 1)"
+                  icon="pi pi-check"
+                  iconPos="right"
+                  size="small"
+                  [disabled]="!(completions()[activity.id + '-' + (idx + 1)] | hasReset: activity.refresh)"
+                  (click)="completeOccurrence(activity.id + '-' + (idx + 1))"
+                />
+                @if (!(completions()[activity.id + '-' + (idx + 1)] | hasReset: activity.refresh)) {
+                  <span class="remaining-time">
+                    {{ completions()[activity.id + '-' + (idx + 1)] | timeRemaining: activity.refresh }}
+                  </span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </p-accordion-content>
+    </p-accordion-panel>
+  }
+</p-accordion>

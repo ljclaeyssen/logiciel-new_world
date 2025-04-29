@@ -1,5 +1,5 @@
 import {Routes} from '@angular/router';
-import {DungeonsComponent} from './dungeons/dungeons.component';
+import {DailyPVEComponent} from './dungeons/daily-pve.component';
 import {EliteChestRunComponent} from './elite-chest-run/elite-chest-run.component';
 
 export const dailyContentRoutes: Routes = [
@@ -13,8 +13,8 @@ export const dailyContentRoutes: Routes = [
           component: EliteChestRunComponent,
         },
         {
-          path: 'dungeons',
-          component: DungeonsComponent,
+          path: 'activities',
+          component: DailyPVEComponent,
         }
       ]
     },

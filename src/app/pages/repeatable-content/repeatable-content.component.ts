@@ -24,9 +24,9 @@ export class RepeatableContentComponent {
           routerLink: 'daily/ecr',
         },
         {
-          label: 'Donjons',
+          label: 'PVE',
           icon: 'pi pi-angle-down',
-          routerLink: 'daily/dungeons',
+          routerLink: 'daily/activities',
         }
       ]
     },

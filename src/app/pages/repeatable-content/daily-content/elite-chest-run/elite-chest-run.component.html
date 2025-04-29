@@ -2,33 +2,29 @@
   @for (ecr of eliteChestRuns(); track ecr.id) {
     <p-accordion-panel [value]="ecr.id">
       <p-accordion-header>
-        <div class="flex items-center justify-between w-full">
-          <span class="text-lg font-semibold">{{ ecr.name }}</span>
-          <div class="flex items-center space-x-3">
-            <button
-              pButton
-              type="button"
-              pButtonIcon="pi pi-copy"
-              class="p-button-sm p-button-text p-button-secondary"
-              pTooltip="Copier le shortname"
-              tooltipPosition="top"
-              (click)="copyToClipboard(ecr.shortname)"
-            >
-              {{ ecr.shortname }}
-            </button>
-            @if (!(completions()[ecr.id] | hasReset: ecr.refresh)) {
-              <span class="font-mono text-yellow-300">
+        <div class="accordion-header">
+          <div>{{ ecr.name }}</div>
+          <p-button
+            icon="pi pi-copy"
+            [outlined]="true"
+            severity="secondary"
+            size="small"
+            label="+ {{ ecr.shortname }}"
+            (click)="$event.stopPropagation(); copyToClipboard(ecr.shortname)"
+            iconPos="right"
+          />
+          @if (!(completions()[ecr.id] | hasReset: ecr.refresh)) {
+            <span class="remaining-time">
                 {{ completions()[ecr.id] | timeRemaining: ecr.refresh }}
               </span>
-            } @else {
-              <i
-                class="pi pi-check-circle text-green-400 cursor-pointer"
-                pTooltip="Marquer comme terminé"
-                tooltipPosition="top"
-                (click)="completeRun(ecr.id)"
-              ></i>
-            }
-          </div>
+          } @else {
+            <p-button
+              label="Terminer"
+              icon="pi pi-check"
+              iconPos="right"
+              size="small"
+              (click)="completeRun(ecr.id)"/>
+          }
         </div>
       </p-accordion-header>
       <p-accordion-content>
