@@ -32,6 +32,11 @@ export class RepeatableContentComponent {
           label: 'Achats',
           icon: 'ra ra-crown',
           routerLink: 'daily/purchasables',
+        },
+        {
+          label: 'Evènements',
+          icon: 'ra ra-beer',
+          routerLink: 'daily/event',
         }
       ]
     },
