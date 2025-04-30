@@ -8,7 +8,12 @@
         </div>
       </p-accordion-header>
       <p-accordion-content>
-        <div class="p-4">
+        <div>
+          @if (task.description?.length) {
+            <p>
+              {{task.description}}
+            </p>
+          }
           <div class="occurrences-container">
             @for (item of task.items; track $index; let idx = $index) {
               <div class="occurrence-item">

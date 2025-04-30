@@ -43,62 +43,36 @@
     ]
   },
   {
+    "id": "open-breach-box",
+    "name": "Ouvrir des coffres d'altération",
+    "description": "Ouvrez 2 caisses d'altération que vous avez obtenu dans des foyers majeurs (par exemple à Myrkgard) pour obtenir 2 sacs d'or. Il n'est pas nécessaire de les avoir gagnées le jour même, uniquement de les ouvrir.",
+    "refresh": "DAILY",
+    "items": [
+      { "name": "Caisse 1", "rarity": "purple" },
+      { "name": "Caisse 2", "rarity": "purple" }
+    ]
+  },
+  {
     "id": "purchase-faction",
     "name": "Vendeur de faction",
     "refresh": "DAILY",
     "items": [
-      { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },
-      { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },
-      { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },
-      { "name": "Orbe de gypse x5", "rarity": "orange" }
+      { "name": "Orbe de Gypse", "rarity": "purple" },
+      { "name": "Orbe de Gypse", "rarity": "purple" },
+      { "name": "Orbe de Gypse", "rarity": "purple" },
+      { "name": "Orbe de Gypse", "rarity": "purple" },
+      { "name": "Orbe de Gypse", "rarity": "purple" }
     ]
   },
   {
-    "id": "purchase-harvesting-orange",
-    "name": "Vendeur de faction : Caisses de récolte (Légendaires)",
+    "id": "purchase-harvesting",
+    "name": "Vendeur de faction : Caisses de récolte",
     "refresh": "DAILY",
     "items": [
-      { "name": "Caisse de pêche", "rarity": "orange" },
-      { "name": "Caisse de minage", "rarity": "orange" },
-      { "name": "Caisse de dépeçage", "rarity": "orange" },
-      { "name": "Caisse de bûcheron", "rarity": "orange" },
-      { "name": "Caisse de récolte", "rarity": "orange" }
-    ]
-  },
-  {
-    "id": "purchase-harvesting-purple",
-    "name": "Vendeur de faction :  Caisses de récolte (Épiques)",
-    "refresh": "DAILY",
-    "items": [
-      { "name": "Caisse de pêche", "rarity": "purple" },
-      { "name": "Caisse de minage", "rarity": "purple" },
-      { "name": "Caisse de dépeçage", "rarity": "purple" },
-      { "name": "Caisse de bûcheron", "rarity": "purple" },
-      { "name": "Caisse de récolte", "rarity": "purple" }
-    ]
-  },
-  {
-    "id": "purchase-harvesting-blue",
-    "name": "Vendeur de faction : Caisses de récolte (Rares)",
-    "refresh": "DAILY",
-    "items": [
-      { "name": "Caisse de pêche", "rarity": "blue" },
-      { "name": "Caisse de minage", "rarity": "blue" },
-      { "name": "Caisse de dépeçage", "rarity": "blue" },
-      { "name": "Caisse de bûcheron", "rarity": "blue" },
-      { "name": "Caisse de récolte", "rarity": "blue" }
-    ]
-  },
-  {
-    "id": "purchase-harvesting-green",
-    "name": "Vendeur de faction : Caisses de récolte (Inhabituelles)",
-    "refresh": "DAILY",
-    "items": [
-      { "name": "Caisse de pêche", "rarity": "green" },
-      { "name": "Caisse de minage", "rarity": "green" },
-      { "name": "Caisse de dépeçage", "rarity": "green" },
-      { "name": "Caisse de bûcheron", "rarity": "green" },
-      { "name": "Caisse de récolte", "rarity": "green" }
+      { "name": "Caisses légendaires", "rarity": "orange" },
+      { "name": "Caisses épiques", "rarity": "purple" },
+      { "name": "Caisses de rares", "rarity": "blue" },
+      { "name": "Caisses inhabituelles", "rarity": "green" }
     ]
   }
 ]
