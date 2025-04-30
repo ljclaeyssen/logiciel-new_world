@@ -16,7 +16,7 @@ export class NavbarComponent {
       {
         label: 'Répétable',
         icon: 'pi pi-replay',
-        routerLink: 'repeatable',
+        routerLink: 'repeatable/daily/ecr',
         // items: [
         //   {
         //     label: 'Journalier',
@@ -29,7 +29,7 @@ export class NavbarComponent {
         // ]
       },
       {
-        label: 'A faire',
+        label: 'A faire une fois 65(soon)',
         icon: 'pi pi-list-check'
       }
     ]

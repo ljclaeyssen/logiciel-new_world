@@ -9,7 +9,7 @@
       </p-accordion-header>
       <p-accordion-content>
         <div>
-          @if (task.description?.length) {
+          @if ((task.description || '').length) {
             <p>
               {{task.description}}
             </p>

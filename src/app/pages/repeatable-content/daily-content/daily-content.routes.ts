@@ -25,6 +25,10 @@ export const dailyContentRoutes: Routes = [
         {
           path: 'event',
           component: DailyEventTasksComponent,
+        },
+        {
+          path: '**',
+          redirectTo: 'ecr'
         }
       ]
     },
