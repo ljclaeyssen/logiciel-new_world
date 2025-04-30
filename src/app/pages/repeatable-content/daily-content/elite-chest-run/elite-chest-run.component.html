@@ -29,8 +29,14 @@
         </div>
       </p-accordion-header>
       <p-accordion-content>
-        <div class="p-4">
-          toto
+        @if (ecr.description.length) {
+          <p>
+            {{ecr.description}}
+          </p>
+        }
+        <div class="maps-container">
+          <img class="new-world-border legendary" [src]="ecr.globalLocalisationMapURI"/>
+          <img class="new-world-border legendary" [src]="ecr.regionalLocalisationMapURI"/>
         </div>
       </p-accordion-content>
     </p-accordion-panel>

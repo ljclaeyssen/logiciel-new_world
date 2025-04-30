@@ -6,4 +6,13 @@
     align-items: center;
     gap: 1rem;
   }
+
+  .maps-container {
+    display: flex;
+    gap: 3rem;
+  }
+  img {
+    height: 500px;
+  }
+
 }
