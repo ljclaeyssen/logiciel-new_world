@@ -22,7 +22,7 @@
   {
     "id": "dng-mut",
     "name": "Donjons mutés aléatoires",
-    "description": "Compléter 2 donjons mutés aléatoires via l'interface de groupe.",
+    "description": "Compléter 2 donjons mutés aléatoires via l'interface d'activités.",
     "refresh": "DAILY",
     "loot": [],
     "amount": 2,
@@ -34,7 +34,7 @@
   {
     "id": "quest-faction",
     "name": "Quêtes de faction",
-    "description": "Compléter 3 quêtes de faction via le tableau des missions.",
+    "description": "Compléter 3 quêtes de faction via les tableaux des missions. Il n'est pas nécessaire de faire les 3 missions dans la même ville.",
     "refresh": "DAILY",
     "loot": [],
     "amount": 3,
@@ -45,6 +45,7 @@
   {
     "id": "purchase-wishing-well",
     "name": "Puit de la Fortune",
+    "description": "Récupérez tout ça contre des doublons aux Îles des lames ! Vous obtenez des doublons en faisant des activités dans la zone (PVP sauvage, ECR, contenu hebdomadaire de la zone, etc)",
     "refresh": "DAILY",
     "items": [
       { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },

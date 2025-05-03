@@ -12,6 +12,11 @@
       </p-accordion-header>
       <p-accordion-content>
         <div>
+          @if (activity.description?.length) {
+            <p>
+              {{activity.description}}
+            </p>
+          }
           <div class="content">
             <div class="occurrences-container">
               @for (i of Array(activity.amount).keys(); track i; let idx = $index) {
