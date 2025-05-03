@@ -2,12 +2,13 @@ import {NgClass} from '@angular/common';
 import {Component, computed, inject} from '@angular/core';
 import {Accordion, AccordionContent, AccordionHeader, AccordionPanel} from 'primeng/accordion';
 import {Button} from 'primeng/button';
+import {Image} from 'primeng/image';
 import {CustomOccurrenceLabelPipe} from '../../../../pipes/custom-occurence-label.pipe';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
 import {OpenPanelsService} from '../../../../services/open-panels.service';
 import {ResetTimeService} from '../../../../services/reset-time.service';
-import { DailiesStore } from '../../../../stores/dailies-store';
+import {DailiesStore} from '../../../../stores/dailies-store';
 
 @Component({
   selector: 'app-dungeons',
@@ -20,7 +21,8 @@ import { DailiesStore } from '../../../../stores/dailies-store';
     AccordionContent,
     Button,
     CustomOccurrenceLabelPipe,
-    NgClass
+    NgClass,
+    Image,
   ],
   templateUrl: './daily-pve.component.html',
   styleUrl: './daily-pve.component.css'
@@ -28,13 +30,12 @@ import { DailiesStore } from '../../../../stores/dailies-store';
 export class DailyPVEComponent {
   private readonly dailiesStore = inject(DailiesStore);
   private readonly resetTimeService = inject(ResetTimeService);
-  private readonly openPanelsService = inject(OpenPanelsService);
 
   public readonly completions = this.dailiesStore.completedTasks;
 
   public readonly dailyActivities = computed(() => {
     return this.dailiesStore.otherTasks().filter(activity =>
-      ['Donjons aléatoires', 'Donjons mutés', 'Quêtes de faction', 'Tuer 3 nommés'].includes(activity.name)
+      ['dng-rand', 'dng-mut', 'quest-faction', 'named-killed'].includes(activity.id)
     );
   });
 

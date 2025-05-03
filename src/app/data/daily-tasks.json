@@ -5,7 +5,11 @@
     "description": "Compléter 3 donjons aléatoires via l'interface de groupe.",
     "refresh": "DAILY",
     "loot": [],
-    "amount": 3
+    "amount": 3,
+    "illustrationsURI": [
+      "assets/pve/dung/activities.png",
+      "assets/pve/dung/tag.png"
+    ]
   },
   {
     "id": "named-killed",
@@ -17,11 +21,15 @@
   },
   {
     "id": "dng-mut",
-    "name": "Donjons mutés",
+    "name": "Donjons mutés aléatoires",
     "description": "Compléter 2 donjons mutés aléatoires via l'interface de groupe.",
     "refresh": "DAILY",
     "loot": [],
-    "amount": 2
+    "amount": 2,
+    "illustrationsURI": [
+      "assets/pve/muta/activities.png",
+      "assets/pve/muta/tag.png"
+    ]
   },
   {
     "id": "quest-faction",
@@ -29,7 +37,10 @@
     "description": "Compléter 3 quêtes de faction via le tableau des missions.",
     "refresh": "DAILY",
     "loot": [],
-    "amount": 3
+    "amount": 3,
+    "illustrationsURI": [
+      "assets/pve/faction-quests/écran-quêtes.png"
+    ]
   },
   {
     "id": "purchase-wishing-well",
@@ -40,6 +51,10 @@
       { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },
       { "name": "Caisse épique d'ordre maudit", "rarity": "purple" },
       { "name": "Orbe de gypse x5", "rarity": "orange" }
+    ],
+    "illustrationsURI": [
+      "assets/purchase/puit-de-la-fortune/puit-map.png",
+      "assets/purchase/puit-de-la-fortune/puit-visuel.png"
     ]
   },
   {

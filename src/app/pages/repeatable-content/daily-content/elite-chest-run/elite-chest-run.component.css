@@ -11,8 +11,5 @@
     display: flex;
     gap: 3rem;
   }
-  img {
-    height: 500px;
-  }
 
 }

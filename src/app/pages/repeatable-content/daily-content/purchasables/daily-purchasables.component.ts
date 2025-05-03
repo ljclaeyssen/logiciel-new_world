@@ -3,6 +3,7 @@ import {Component, computed, inject} from '@angular/core';
 import {DateTime} from 'luxon';
 import {Accordion, AccordionContent, AccordionHeader, AccordionPanel} from 'primeng/accordion';
 import {Button} from 'primeng/button';
+import {Image} from 'primeng/image';
 import { Rarity } from '../../../../models/rarity';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
@@ -19,7 +20,8 @@ import {DailiesStore} from '../../../../stores/dailies-store';
     HasResetPipe,
     TimeRemainingPipe,
     Button,
-    NgClass
+    NgClass,
+    Image
   ],
   templateUrl: './daily-purchasables.component.html',
   styleUrl: './daily-purchasables.component.css'

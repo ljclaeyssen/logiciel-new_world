@@ -2,6 +2,7 @@ import {Component, computed, inject} from '@angular/core';
 import {Accordion, AccordionContent, AccordionHeader, AccordionPanel} from 'primeng/accordion';
 import {MessageService} from 'primeng/api';
 import {Button} from 'primeng/button';
+import {Image} from 'primeng/image';
 import {HasResetPipe} from '../../../../pipes/has-reset.pipe';
 import {TimeRemainingPipe} from '../../../../pipes/time-remaining.pipe';
 import {OpenPanelsService} from '../../../../services/open-panels.service';
@@ -16,7 +17,8 @@ import {DailiesStore} from '../../../../stores/dailies-store';
     HasResetPipe,
     TimeRemainingPipe,
     AccordionContent,
-    Button
+    Button,
+    Image
   ],
   templateUrl: './elite-chest-run.component.html',
   styleUrl: './elite-chest-run.component.css'

@@ -26,3 +26,15 @@
     gap: 1rem;
   }
 }
+
+
+.content {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.illustations-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

@@ -7,4 +7,5 @@ export interface Task {
   description: string;
   refresh: RefreshFrequency;
   loot: Loot[];
+  illustrationsURI?: string[];
 }

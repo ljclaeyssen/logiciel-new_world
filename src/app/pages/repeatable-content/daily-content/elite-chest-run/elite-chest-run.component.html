@@ -35,8 +35,9 @@
           </p>
         }
         <div class="maps-container">
-          <img class="new-world-border legendary" [src]="ecr.globalLocalisationMapURI"/>
-          <img class="new-world-border legendary" [src]="ecr.regionalLocalisationMapURI"/>
+
+          <p-image class="new-world-border legendary" [src]="ecr.globalLocalisationMapURI" [preview]="true" height="300"/>
+          <p-image class="new-world-border legendary" [src]="ecr.regionalLocalisationMapURI" [preview]="true" height="300"/>
         </div>
       </p-accordion-content>
     </p-accordion-panel>
