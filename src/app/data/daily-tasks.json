@@ -66,6 +66,10 @@
     "items": [
       { "name": "Caisse 1", "rarity": "purple" },
       { "name": "Caisse 2", "rarity": "purple" }
+    ],
+    "illustrationsURI": [
+      "assets/purchase/cache-alteration/open.png",
+      "assets/purchase/cache-alteration/open-coins.png"
     ]
   },
   {
