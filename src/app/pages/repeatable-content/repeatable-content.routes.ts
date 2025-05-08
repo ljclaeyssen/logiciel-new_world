@@ -13,8 +13,8 @@ export const repeatableContentRoutes: Routes = [
       },
       {
         path: 'weekly',
-        loadComponent: () =>
-          import('./weekly-content/weekly-content.component').then(m => m.WeeklyContentComponent),
+        loadChildren: () =>
+          import('./weekly-content/weekly-content.routes').then(m => m.weeklyContentRoutes),
       },
     ]
   }

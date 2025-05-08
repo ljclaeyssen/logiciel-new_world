@@ -1,0 +1,50 @@
+[
+  {
+    "id": "incubator",
+    "name": "L'incubateur",
+    "description": "Compléter 2 fois l'incubateur via l'interface de groupe.",
+    "refresh": "WEEKLY",
+    "loot": [],
+    "amount": 2
+  },
+  {
+    "id": "winter-forge",
+    "name": "La Forge de l'hiver",
+    "description": "Compléter 1 fois la Forge de l'hiver via l'interface de groupe.",
+    "refresh": "WEEKLY",
+    "loot": [],
+    "amount": 2
+  },
+  {
+    "id": "gorgon-hive",
+    "name": "La Ruche des Gorgones",
+    "description": "Compléter 1 fois la Ruche des Gorgones via l'interface de groupe.",
+    "refresh": "WEEKLY",
+    "loot": [],
+    "amount": 1
+  },
+  {
+    "id": "devourer",
+    "name": "Le Dévoreur",
+    "description": "Compléter 1 fois le Dévoreur via l'interface de groupe.",
+    "refresh": "WEEKLY",
+    "loot": [],
+    "amount": 1
+  },
+  {
+    "id": "weekly-wishing-well",
+    "name": "Récupérer la clé en or",
+    "refresh": "WEEKLY",
+    "items": [
+      { "name": "Clé en or", "rarity": "orange" }
+    ]
+  },
+  {
+    "id": "weekly-blade-islands",
+    "name": "Récupérer la noix de coco",
+    "refresh": "WEEKLY",
+    "items": [
+      { "name": "Noix de coco", "rarity": "purple" }
+    ]
+  }
+]

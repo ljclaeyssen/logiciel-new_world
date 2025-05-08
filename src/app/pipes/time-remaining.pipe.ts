@@ -26,7 +26,7 @@ export class TimeRemainingPipe implements PipeTransform {
         return `Activité terminée, déverrouillée demain`;
       }
 
-      return `Activité terminée, déverrouillée le ${nextReset.toFormat('dddd DD/MM')}`;
+      return `Activité terminée, déverrouillée le ${nextReset.toFormat('DDDD')}`;
     }
 
     const nextReset = this.resetTimeService.getNextResetTime(frequency, now);

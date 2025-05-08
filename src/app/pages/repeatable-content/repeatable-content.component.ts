@@ -41,9 +41,20 @@ export class RepeatableContentComponent {
       ]
     },
     {
-      label: 'Hebdomadaire (soon)',
+      label: 'Hebdomadaire',
       icon: 'pi pi-calendar',
-      routerLink: 'weekly',
+      items: [
+        {
+          label: 'PVE',
+          icon: 'ra ra-sword',
+          routerLink: 'weekly/activities',
+        },
+        {
+          label: 'Achats',
+          icon: 'ra ra-crown',
+          routerLink: 'weekly/purchasables',
+        },
+      ],
     },
   ])
 }

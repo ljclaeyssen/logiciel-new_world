@@ -50,7 +50,6 @@ export class ResetTimeService {
     const now = DateTime.now().setZone(this.TIMEZONE);
 
     const nextResetAfterCompareDate = this.calculateNextResetTime(frequency, compareDate);
-
     return nextResetAfterCompareDate > now;
   }
 

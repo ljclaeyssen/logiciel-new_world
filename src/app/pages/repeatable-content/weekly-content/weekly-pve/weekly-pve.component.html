@@ -1,6 +1,6 @@
-<h2>PVE Journalier</h2>
+<h2>PVE Hebdomadaire</h2>
 <p-accordion [value]="openPanels()" [multiple]="true">
-  @for (activity of dailyActivities(); track activity.id) {
+  @for (activity of pveTasks(); track activity.id) {
     <p-accordion-panel [value]="activity.id">
       <p-accordion-header>
         <div class="accordion-header">
@@ -27,7 +27,7 @@
                     iconPos="right"
                     size="small"
                     [disabled]="!(completions()[activity.id + '-' + (idx + 1)] | hasReset: activity.refresh)"
-                    (click)="completeOccurrence(activity.id + '-' + (idx + 1))"
+                    (click)="completeTask(activity.id + '-' + (idx + 1))"
                   />
                   @if (!(completions()[activity.id + '-' + (idx + 1)] | hasReset: activity.refresh)) {
                     <span class="remaining-time">

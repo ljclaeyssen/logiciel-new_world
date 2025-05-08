@@ -16,7 +16,7 @@ export class CustomOccurrenceLabelPipe implements PipeTransform {
       case 'Tuer 3 nommés':
         return `Nommé ${occurrence}`;
       default:
-        return `Occurrence ${occurrence}`;
+        return `Raid ${occurrence}`;
     }
   }
 

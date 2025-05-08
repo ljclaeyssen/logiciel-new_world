@@ -1,0 +1,53 @@
+<h2>Achats Hebdomadaires</h2>
+<p-accordion [value]="openPanels()" [multiple]="true">
+  @for (task of purchasableTasks(); track task.id) {
+    <p-accordion-panel [value]="task.id">
+      <p-accordion-header>
+        <div class="accordion-header">
+          <div>{{ task.name }}</div>
+        </div>
+      </p-accordion-header>
+      <p-accordion-content>
+        <div>
+          @if ((task.description || '').length) {
+            <p>
+              {{ task.description }}
+            </p>
+          }
+          <div class="content">
+            <div class="occurrences-container">
+              @for (item of task.items; track $index; let idx = $index) {
+                <div class="occurrence-item">
+                  <p-button
+                    [label]="item.name"
+                    [ngClass]="{
+                      'rarity-green': item.rarity === Rarity.GREEN,
+                      'rarity-blue': item.rarity === Rarity.BLUE,
+                      'rarity-purple': item.rarity === Rarity.PURPLE,
+                      'rarity-orange': item.rarity === Rarity.ORANGE
+                    }"
+                    icon="pi pi-check"
+                    iconPos="right"
+                    size="small"
+                    [disabled]="!(completions()[task.id + '-' + idx] | hasReset: task.refresh)"
+                    (click)="completeItem(task.id + '-' + idx)"
+                  />
+                  @if (!(completions()[task.id + '-' + idx] | hasReset: task.refresh)) {
+                    <span class="remaining-time">
+                      {{ completions()[task.id + '-' + idx] | timeRemaining: task.refresh }}
+                    </span>
+                  }
+                </div>
+              }
+            </div>
+            <div class="illustations-container">
+              @for (illustration of task.illustrationsURI; track illustration) {
+                <p-image class="new-world-border epic" [src]="illustration" [preview]="true" height="200"/>
+              }
+            </div>
+          </div>
+        </div>
+      </p-accordion-content>
+    </p-accordion-panel>
+  }
+</p-accordion>
