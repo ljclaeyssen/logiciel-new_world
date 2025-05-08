@@ -13,8 +13,7 @@
       <p-accordion-content>
         <div>
           @if ((activity.description || '').length) {
-            <p>
-              {{activity.description}}
+            <p [innerHTML]="activity.description">
             </p>
           }
           <div class="content">

@@ -2,7 +2,7 @@
   {
     "id": "incubator",
     "name": "L'incubateur",
-    "description": "Compléter 2 fois l'incubateur via l'interface de groupe.",
+    "description": "Effectuez 2 fois l'incubateur en groupe. <br/> N'hésitez pas à vous procurer l'amulette de résistance au feu obtenable à la Forge Empyréenne (3 fois la quête journalière pour la craft au four à gypse)",
     "refresh": "WEEKLY",
     "loot": [],
     "amount": 2
@@ -10,7 +10,7 @@
   {
     "id": "winter-forge",
     "name": "La Forge de l'hiver",
-    "description": "Compléter 1 fois la Forge de l'hiver via l'interface de groupe.",
+    "description": "Effectuez 2 fois la forge de l'hiver en groupe.  <br/> N'hésitez pas à vous procurer l'amulette de résistance au givre obtenable au Lac de Glace (3 fois la quête journalière pour la craft au four à gypse)",
     "refresh": "WEEKLY",
     "loot": [],
     "amount": 2
@@ -18,7 +18,7 @@
   {
     "id": "gorgon-hive",
     "name": "La Ruche des Gorgones",
-    "description": "Compléter 1 fois la Ruche des Gorgones via l'interface de groupe.",
+    "description": "GL HF",
     "refresh": "WEEKLY",
     "loot": [],
     "amount": 1
@@ -26,25 +26,33 @@
   {
     "id": "devourer",
     "name": "Le Dévoreur",
-    "description": "Compléter 1 fois le Dévoreur via l'interface de groupe.",
+    "description": "Bon courage",
     "refresh": "WEEKLY",
     "loot": [],
     "amount": 1
   },
   {
     "id": "weekly-wishing-well",
-    "name": "Récupérer la clé en or",
+    "name": "Coffre des îles des lames",
+    "description": "Récupérez votre clé en or au puit aux îles des Lames, allez ouvrir le coffre situé à l'entrée de la zone PVP sauvage. Vous obtiendrez une grosse quantité de doublons. Si vous n'avez pas de doublons pour récupérer votre clé, faites une Elite Chest Run 'CK'",
     "refresh": "WEEKLY",
     "items": [
-      { "name": "Clé en or", "rarity": "orange" }
+      { "name": "Coffre ouvert", "rarity": "orange" }
+    ],
+    "illustrationsURI": [
+      "assets/ecr/world-view/cutlass.png"
     ]
   },
   {
     "id": "weekly-blade-islands",
     "name": "Récupérer la noix de coco",
+    "description": "Dans la zone PVP sauvage des îles des lames, récupérer une noix de coco dans le gros coffres. Elle vous permettra d'améliorer des équipements à 725gs",
     "refresh": "WEEKLY",
     "items": [
       { "name": "Noix de coco", "rarity": "purple" }
+    ],
+    "illustrationsURI": [
+      "assets/ecr/world-view/cutlass.png"
     ]
   }
 ]
