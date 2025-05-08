@@ -2,7 +2,7 @@
   {
     "id": "dng-rand",
     "name": "Donjons aléatoires",
-    "description": "Compléter 3 donjons aléatoires via l'interface de groupe.",
+    "description": "Vous obtiendrez 750 pièces d'or pour chacun des 3 premiers donjons aléatoires de la journée. <br/> +250 pièces pour ces 3 premiers donjons si vous êtes tank ou heal.",
     "refresh": "DAILY",
     "loot": [],
     "amount": 3,
@@ -22,7 +22,7 @@
   {
     "id": "dng-mut",
     "name": "Donjons mutés aléatoires",
-    "description": "Compléter 2 donjons mutés aléatoires via l'interface d'activités.",
+    "description": "Vous obtiendrez 1000 pièces d'or pour chacun des 3 premiers donjons mutés aléatoires de la journée. <br/> +500 pièces pour ces 3 premiers donjons si vous êtes tank ou heal.",
     "refresh": "DAILY",
     "loot": [],
     "amount": 2,
@@ -34,7 +34,7 @@
   {
     "id": "quest-faction",
     "name": "Quêtes de faction",
-    "description": "Compléter 3 quêtes de faction via les tableaux des missions. Il n'est pas nécessaire de faire les 3 missions dans la même ville.",
+    "description": "les 3 premières quêtes de faction de la journée ont un bonus en jetons de faction ! Quand on voit le prix des récompenses, c'est pas du luxe !",
     "refresh": "DAILY",
     "loot": [],
     "amount": 3,
@@ -75,6 +75,7 @@
   {
     "id": "purchase-faction",
     "name": "Vendeur de faction",
+    "description": "Vous n'en n'aurez clairement jamais assez ! A acheter sans modération tous les jours !",
     "refresh": "DAILY",
     "items": [
       { "name": "Orbe de Gypse", "rarity": "purple" },
@@ -82,10 +83,15 @@
       { "name": "Orbe de Gypse", "rarity": "purple" },
       { "name": "Orbe de Gypse", "rarity": "purple" },
       { "name": "Orbe de Gypse", "rarity": "purple" }
+    ],
+    "illustrationsURI": [
+      "assets/purchase/faction/gypses-1.png",
+      "assets/purchase/faction/gypses-2.png"
     ]
   },
   {
     "id": "purchase-harvesting",
+    "description": "Loin d'être obligatoire, mais accélère la montée en niveau. Inutile passé le niveau 250 de vos métiers.",
     "name": "Vendeur de faction : Caisses de récolte",
     "refresh": "DAILY",
     "items": [

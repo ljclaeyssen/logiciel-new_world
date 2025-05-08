@@ -9,7 +9,7 @@ export class CustomOccurrenceLabelPipe implements PipeTransform {
     switch (activityName) {
       case 'Donjons aléatoires':
         return `Donjon ${occurrence}`;
-      case 'Donjons mutés':
+      case 'Donjons mutés aléatoires':
         return `Mutation ${occurrence}`;
       case 'Quêtes de faction':
         return `Quête ${occurrence}`;
