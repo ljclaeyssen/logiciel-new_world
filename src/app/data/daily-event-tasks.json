@@ -12,7 +12,7 @@
   },
   {
     "id": "event-melegies-pile",
-    "name": "Récupérer les de cadeaux joyeux",
+    "name": "Récupérer les piles de cadeaux joyeux dans les colonies",
     "refresh": "DAILY",
     "items": [
       { "name": "Crète de la longue vue (îles des lames)", "amount": 1 },
@@ -33,7 +33,7 @@
   },
   {
     "id": "event-melegies-gifts",
-    "name": "Piles de cadeaux joyeux",
+    "name": "Récupérer les cadeaux merveilleux aux camps de l'évènement",
     "refresh": "DAILY",
     "items": [
       { "name": "Boisclair ", "amount": 1 },
