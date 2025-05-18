@@ -13,7 +13,7 @@
             @for (item of task.items; track $index; let idx = $index) {
               <div class="occurrence-item">
                 <p-button
-                  [label]="item.name + ' (' + item.amount + ')'"
+                  [label]="item.name + (item.amount > 1 ? ' (' + item.amount + ')' : '')"
                   icon="pi pi-check"
                   iconPos="right"
                   size="small"
