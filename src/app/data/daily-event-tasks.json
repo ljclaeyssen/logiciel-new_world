@@ -15,18 +15,18 @@
     "name": "Récupérer les piles de cadeaux joyeux dans les colonies",
     "refresh": "DAILY",
     "items": [
-      { "name": "Crète de la longue vue (îles des lames)", "amount": 1 },
-      { "name": "Corinthe (Gré du vent)", "amount": 1 },
-      { "name": "Port-Lointain (Eaux fétides)", "amount": 1 },
-      { "name": "Prydwen (Falaises du roy)", "amount": 1 },
-      { "name": "Carrefour de la chance (Brief de Nerécaille)", "amount": 1 },
-      { "name": "Oxboro (Haute-Chute)", "amount": 1 },
-      { "name": "Twillent (Marais des trâmes)", "amount": 1 },
-      { "name": "Baie Sélène (Rives tourmentées)", "amount": 1 },
-      { "name": "Grise-Vallée (Val des larmes)", "amount": 1 },
-      { "name": "Caliburne (Bois-Eden)", "amount": 1 },
-      { "name": "Calvary (Bois Clair)", "amount": 1 },
-      { "name": "Nouvelle-Corse (Sulfure)", "amount": 1 }
+      { "name": "îles des lames", "amount": 1 },
+      { "name": "Gré du vent", "amount": 1 },
+      { "name": "Eaux fétides", "amount": 1 },
+      { "name": "Falaises du Roy", "amount": 1 },
+      { "name": "Brief de Nerécaille", "amount": 1 },
+      { "name": "Haute-Chute", "amount": 1 },
+      { "name": "Marais des trâmes", "amount": 1 },
+      { "name": "Rives tourmentées", "amount": 1 },
+      { "name": "Val des larmes", "amount": 1 },
+      { "name": "Bois-Eden", "amount": 1 },
+      { "name": "Bois Clair", "amount": 1 },
+      { "name": "Sulfure", "amount": 1 }
     ],
     "eventStartDate": "2025-05-15T23:59:59Z",
     "eventEndDate": "2025-06-15T23:59:59Z"
@@ -36,10 +36,10 @@
     "name": "Récupérer les cadeaux merveilleux aux camps de l'évènement",
     "refresh": "DAILY",
     "items": [
-      { "name": "Boisclair ", "amount": 1 },
+      { "name": "Bois Clair ", "amount": 1 },
       { "name": "Falaise du Roy", "amount": 1 },
       { "name": "Marais des trames ", "amount": 1 },
-      { "name": "Hautes chutes", "amount": 1 }
+      { "name": "Hautes-chutes", "amount": 1 }
     ],
     "eventStartDate": "2025-05-15T23:59:59Z",
     "eventEndDate": "2025-06-15T23:59:59Z"
