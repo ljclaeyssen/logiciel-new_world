@@ -1,0 +1,1 @@
+import"./chunk-7CGTOI24.js";var e=[{path:"",loadComponent:()=>import("./chunk-B6GO3W65.js").then(t=>t.RepeatableContentComponent),children:[{path:"daily",loadChildren:()=>import("./chunk-HVGUNWDK.js").then(t=>t.dailyContentRoutes)},{path:"weekly",loadChildren:()=>import("./chunk-V6HCDBAJ.js").then(t=>t.weeklyContentRoutes)}]}];export{e as repeatableContentRoutes};
