@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+import {WeeklyEventTaskComponent} from './weekly-event-task/weekly-event-task.component';
 import {WeeklyPurchasablesComponent} from './weekly-purchasables/weekly-purchasables.component';
 import {WeeklyPveComponent} from './weekly-pve/weekly-pve.component';
 
@@ -15,6 +16,10 @@ export const weeklyContentRoutes: Routes = [
         {
           path: 'purchasables',
           component: WeeklyPurchasablesComponent,
+        },
+        {
+          path: 'event',
+          component: WeeklyEventTaskComponent,
         },
         {
           path: '**',

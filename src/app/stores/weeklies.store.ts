@@ -1,11 +1,14 @@
 import { inject } from '@angular/core';
 import { signalStore, withState, withMethods, patchState, withComputed, withHooks } from '@ngrx/signals';
+import eventTasksData from '../data/daily/daily-event-tasks.json';
 import {RefreshFrequency} from '../models/refresh-frequency';
 import {Activity} from '../models/tasks/activity';
+import {EventTask} from '../models/tasks/event-task';
 import {PurchasableTask} from '../models/tasks/purchasable-task';
 import { LocalStorageService } from '../services/local-storage.service';
 import { computed } from '@angular/core';
-import weeklyTasksData from '../data/weekly-tasks.json';
+import weeklyTasksData from '../data/weekly/weekly-tasks.json';
+import weeklyEventData from '../data/weekly/weekly-event-tasks.json';
 import { Task } from '../models/tasks/task';
 
 interface WeeklyCompletion {
@@ -18,9 +21,15 @@ interface WeeklyState {
 }
 
 const weeklyTasks: Task[] = (weeklyTasksData as unknown) as Task[];
+const eventTasks: EventTask[] = (weeklyEventData as unknown) as EventTask[];
+
+const allTasks: Task[] = [
+  ...weeklyTasks,
+  ...eventTasks,
+] as Task[];
 
 const initialState: WeeklyState = {
-  weeklies: weeklyTasks.map(task => ({
+  weeklies: allTasks.map(task => ({
     ...task,
     refresh: RefreshFrequency.WEEKLY,
   })),
@@ -39,6 +48,11 @@ export const WeeklyStore = signalStore(
     purchasableTasks: computed(() =>
       (store.weeklies() as Task[]).filter(
         (task): task is PurchasableTask => 'items' in task
+      )
+    ),
+    eventTasks: computed(() =>
+      (store.weeklies() as Task[]).filter(
+        (task): task is EventTask => 'items' in task && 'eventEndDate' in task
       )
     ),
     completedTasks: computed(() => store.completions()),

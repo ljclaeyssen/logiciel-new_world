@@ -54,6 +54,11 @@ export class RepeatableContentComponent {
           icon: 'ra ra-crown',
           routerLink: 'weekly/purchasables',
         },
+        {
+          label: 'Evènements',
+          icon: 'ra ra-beer',
+          routerLink: 'weekly/event',
+        }
       ],
     },
   ])

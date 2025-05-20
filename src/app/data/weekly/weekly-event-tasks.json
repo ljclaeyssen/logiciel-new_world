@@ -1,0 +1,15 @@
+[
+  {
+    "id": "event-melegies-chromatic",
+    "name": "Récupérer un sceau chromatique aux camps de l'évènement",
+    "refresh": "WEEKLY",
+    "items": [
+      { "name": "Sceau Chromatique", "amount": 1 }
+    ],
+    "eventStartDate": "2025-05-15T23:59:59Z",
+    "eventEndDate": "2025-06-15T23:59:59Z"
+  }
+]
+
+
+

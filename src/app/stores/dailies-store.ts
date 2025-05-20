@@ -1,7 +1,7 @@
 import {computed, inject} from '@angular/core';
 import {patchState, signalStore, withComputed, withHooks, withMethods, withState} from '@ngrx/signals';
-import eventTasksData from '../data/daily-event-tasks.json';
-import dailyTasksData from '../data/daily-tasks.json';
+import eventTasksData from '../data/daily/daily-event-tasks.json';
+import dailyTasksData from '../data/daily/daily-tasks.json';
 
 
 import ecrTasksData from '../data/ecr-tasks.json';
